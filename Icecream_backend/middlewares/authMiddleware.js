@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 
 // Middleware to verify if the user is an admin
 export const verifyAdmin = (req, res, next) => {
-  // Extract token from Authorization header (e.g., Bearer <token>)
+  // Extract token from Authorization header
   const token = req.header('Authorization')?.replace('Bearer ', '');
   
   // If no token is found, send a 401 Unauthorized response
@@ -32,7 +32,7 @@ export const verifyAdmin = (req, res, next) => {
 
 // Middleware to verify if the user is authenticated (non-admin routes)
 export const verifyUser = (req, res, next) => {
-  // Extract token from Authorization header (e.g., Bearer <token>)
+  // Extract token from Authorization header 
   const token = req.header('Authorization')?.replace('Bearer ', '');
   
   // If no token is found, send a 401 Unauthorized response
